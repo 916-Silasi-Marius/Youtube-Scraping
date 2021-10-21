@@ -29,3 +29,4 @@ In order for anyone to be able to run the script you should make a folder called
 The first .json file is called "config.json" and contains two fields: "api_key" and "country". The "api_key" field should contain your own YouTube API key and the "country" field should contain the initials of a country that you want your results to be filtered by.
 The second .json file is called "client_secret.json" and is the file you download from the Google Developer Console when you create a Service Account.
 Please make sure both files have the names specified above!
+You must also create two sheets that you will have to give permission to the Google Sheets API in order for the program to be able to read and write from the sheets.
