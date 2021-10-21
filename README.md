@@ -24,4 +24,4 @@ After gathering all this information, using the Google Sheet API, the data is st
 There are some filters that are applied to the results, concerning video count, average views etc. The videos that do not pass this filter are stored in a separate Google Sheet.
 Both the Google Sheets are evaluated before scraping to make sure all the results that we receive are 100% new channels that have not been scraped yet, so we do not have any duplicates in our databases.
 
-# Running the script
+## Running the script
