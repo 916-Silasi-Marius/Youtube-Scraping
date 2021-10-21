@@ -25,3 +25,7 @@ There are some filters that are applied to the results, concerning video count, 
 Both the Google Sheets are evaluated before scraping to make sure all the results that we receive are 100% new channels that have not been scraped yet, so we do not have any duplicates in our databases.
 
 ## Running the script
+In order for anyone to be able to run the script you should make a folder called "Data" that will contain two .json files. 
+The first .json file is called "config.json" and contains two fields: "api_key" and "country". The "api_key" field should contain your own YouTube API key and the "country" field should contain the initials of a country that you want your results to be filtered by.
+The second .json file is called "client_secret.json" and is the file you download from the Google Developer Console when you create a Service Account.
+Please make sure both files have the names specified above!
