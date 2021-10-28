@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 from model.date import Date
+import re
 
 
 class YouTubeAPI:
@@ -8,12 +9,12 @@ class YouTubeAPI:
         self.__service = service
 
     def get_channel_ids(self, keyword):
-        req = self.__service.search().list(part='id,snippet', q=keyword, maxResults=5, order='date')
+        req = self.__service.search().list(part='id,snippet', q=keyword, maxResults=50, order='date')
         res = req.execute()
         return res['items'], res['items'][len(res['items']) - 1]['snippet']['publishedAt']
 
     def get_channel_ids_before(self, keyword, last_date):
-        req = self.__service.search().list(part='id,snippet', q=keyword, maxResults=5, order='date',
+        req = self.__service.search().list(part='id,snippet', q=keyword, maxResults=50, order='date',
                                            publishedBefore=last_date)
         res = req.execute()
         return res['items'], res['items'][len(res['items']) - 1]['snippet']['publishedAt']
@@ -267,6 +268,30 @@ class YouTubeAPI:
                     if result.find('\\') is not None:
                         result = result[:result.find("\\")]
                 return result
+
+    @staticmethod
+    def get_email():
+        result = []
+        with open('stats.json', 'r') as f:
+            content = f.read()
+            content = content.split('\\n')
+            email_pattern = re.compile("[-a-zA-Z0-9._]+@[-a-zA-Z0-9._]+.[a-zA-Z0-9._]+")
+            for item in content:
+                result += re.findall(email_pattern, item)
+        if len(result) == 0:
+            with open('activity.json', 'r') as f:
+                content = f.read()
+                content = content.split('\\n')
+                email_pattern = re.compile("[-a-zA-Z0-9._]+@[-a-zA-Z0-9._]+.[a-zA-Z0-9._]+")
+                for item in content:
+                    result += re.findall(email_pattern, item)
+        return_list = []
+        for item in result:
+            if item.find("\\") != -1:
+                return_list.append(item[:item.find("\\")])
+            else:
+                return_list.append(item)
+        return return_list
 
     def get_topics(self, channel_id):
         req = self.__service.channels().list(part='topicDetails', id=channel_id)

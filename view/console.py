@@ -8,7 +8,7 @@ class Console:
 
     def run(self):
         try:
-            self.__keywords = input("Provide keywords for search:").replace(' ', '').split(',')
+            self.__keywords = input("Provide keywords for search:").split(',')
             date = self.__controller.create_file_name(self.__keywords)
             channels, channels_per_keyword = self.__controller.process_keywords(self.__keywords)
             print(len(channels), end=' ')

@@ -1,5 +1,6 @@
 from datetime import datetime
 import os
+import time
 from model.youtube_channel import YoutubeChannel
 
 
@@ -34,7 +35,7 @@ class ChannelsController:
             temp_to_string = list(dict.fromkeys(temp_to_string))
             temp_to_string = self.__eliminated_repo.check_for_duplicates(temp_to_string)
             temp_to_string = self.__repo.check_for_duplicates(temp_to_string)
-            while len(temp_to_string) < 5:
+            while len(temp_to_string) < 50:
                 temp_list, last_date = self.__api.get_channel_ids_before(keyword, last_date)
                 for item in temp_list:
                     temp_to_string.append(item['snippet']['channelId'])
@@ -65,10 +66,11 @@ class ChannelsController:
         posting_frequency = self.__api.get_posting_frequency(channel)
         country = self.__api.get_country(channel)
         instagram = self.__api.get_instagram()
+        email = self.__api.get_email()
         topics = self.__api.get_topics(channel)
         self.__repo.add_channel(YoutubeChannel(channel, subscriber_count, last_published_video, average_views,
                                                average_likes, average_comments, relevance, posting_frequency, country,
-                                               instagram, topics, date, keyword))
+                                               instagram, email, topics, date, keyword))
 
     def filter_results(self):
         channels = self.__repo.get_channels()
@@ -96,4 +98,5 @@ class ChannelsController:
 
     def save_results(self):
         self.__repo.save_results()
+        time.sleep(1.5)
         self.__eliminated_repo.save_results()

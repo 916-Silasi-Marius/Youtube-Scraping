@@ -24,7 +24,10 @@ class ChannelsRepository:
     def read_from_sheet(self):
         records = self.__sheet.get_all_records()
         for record in records:
-            self.__channels.append(record['Channel ID'])
+            if len(record['Channel ID']) > 30:
+                self.__channels.append(record['Channel ID'][32:])
+            else:
+                self.__channels.append(record['Channel ID'])
 
     def check_for_duplicates(self, channels):
         to_be_eliminated = []
@@ -48,14 +51,9 @@ class ChannelsRepository:
         return self.__new_channels
 
     def save_results(self):
-        cnt = 0
         with open(self.__file_name, 'w+') as f:
             for channel in self.__new_channels:
-                cnt += 1
-                if cnt < 60:
-                    f.write(channel.to_string())
-                    self.__sheet.append_row(channel.to_string().split(','), 'RAW')
-                else:
-                    time.sleep(65)
-                    cnt = 0
+                f.write(channel.to_string())
+                self.__sheet.append_row(channel.to_string().split(','), 'RAW')
+                time.sleep(1.5)
             f.close()

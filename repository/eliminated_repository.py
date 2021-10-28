@@ -20,7 +20,10 @@ class EliminatedRepository:
     def read_from_sheet(self):
         records = self.__sheet.get_all_records()
         for record in records:
-            self.__eliminated.append(record['Channel ID'])
+            if len(record['Channel ID']) > 30:
+                self.__eliminated.append(record['Channel ID'][32:])
+            else:
+                self.__eliminated.append(record['Channel ID'])
 
     def check_for_duplicates(self, channels):
         to_be_eliminated = []
@@ -42,11 +45,7 @@ class EliminatedRepository:
         return self.__new_eliminated
 
     def save_results(self):
-        cnt = 0
         for channel in self.__new_eliminated:
-            cnt += 1
-            if cnt < 60:
-                self.__sheet.append_row(channel.to_string().split(','), 'RAW')
-            else:
-                time.sleep(65)
-                cnt = 0
+            to_write = channel.to_string().replace('!!!!!', '')
+            self.__sheet.append_row(to_write.split(','), 'RAW')
+            time.sleep(1.5)

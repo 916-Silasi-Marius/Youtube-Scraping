@@ -1,6 +1,6 @@
 class YoutubeChannel:
     def __init__(self, channel_id, subscriber_count, last_published_video, average_views, average_likes,
-                 average_comments, relevance, posting_frequency, country, instagram, topics, scrape_date, scrape_keyword):
+                 average_comments, relevance, posting_frequency, country, instagram, email, topics, scrape_date, scrape_keyword):
         self.__channel_id = channel_id
         self.__subscriber_count = subscriber_count
         self.__last_published_video = last_published_video
@@ -11,6 +11,7 @@ class YoutubeChannel:
         self.__posting_frequency = posting_frequency
         self.__country = country
         self.__instagram = instagram
+        self.__email = email
         self.__topic = topics
         self.__scrape_date = scrape_date
         self.__scrape_keyword = scrape_keyword
@@ -45,11 +46,20 @@ class YoutubeChannel:
     def get_instagram(self):
         return self.__instagram
 
+    def get_email(self):
+        if len(self.__email) == 0:
+            return "NOT AVAILABLE"
+        emails = ""
+        self.__email = list(dict.fromkeys(self.__email))
+        for item in self.__email:
+            emails += item + ';'
+        return emails
+
     def get_topics(self):
         return self.__topic
 
     def to_string(self):
-        return self.__channel_id + ',' + self.__subscriber_count + ',' + self.__last_published_video + ',' + \
+        return 'https://www.youtube.com/channel/' + self.__channel_id + ',' + self.__subscriber_count + ',' + self.__last_published_video + ',' + \
                self.__average_views + ',' + self.__average_likes + ',' + self.__average_comments + ',' + \
                str(self.__relevance) + ',' + self.__posting_frequency + ' days,' + self.__country + ',' + \
-               self.__instagram + ',' + self.__topic + ',' + self.__scrape_date + ',' + self.__scrape_keyword + '\n'
+               self.__instagram + ',' + self.get_email() + ',' + self.__topic + ',' + self.__scrape_date + ',' + self.__scrape_keyword + '\n'
