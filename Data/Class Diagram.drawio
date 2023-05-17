@@ -1,17 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2023-05-17T15:48:31.301Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="Ga3xCdPEhT9HE2rKMO6a" version="21.3.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-17T15:50:14.433Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="GK_Ev25hUmvH7qwZ6RbY" version="21.3.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2049" dy="1137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2049" dy="1056" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="UEXLUlPenu7wnUoc71qz-4" value="YoutubeChannel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="510" y="530" width="210" height="300" as="geometry" />
+          <mxGeometry x="510" y="410" width="210" height="300" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-5" value="- channel_id: string&lt;br&gt;- title: string&lt;br&gt;- thumbnail: string&lt;br&gt;- subscriber_count: int&lt;br&gt;- last_published_video: string&lt;br&gt;- average_views: float&lt;br&gt;- average_likes: float&lt;br&gt;- average_comments: float&lt;br&gt;- relevance: float&lt;br&gt;- posting_frequency: string&lt;br&gt;- country: string&lt;br&gt;- instagram: string&lt;br&gt;- email: string&lt;br&gt;- topics: string&lt;br&gt;- scrape_date: string&lt;br&gt;- scrape_keyword: string&lt;br&gt;- videos: list(YoutubeVideo)&lt;br&gt;- custom_url: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UEXLUlPenu7wnUoc71qz-4" vertex="1">
           <mxGeometry y="26" width="210" height="274" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-9" value="YoutubeVideo&lt;br&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="930" y="650" width="250" height="140" as="geometry" />
+          <mxGeometry x="930" y="530" width="250" height="140" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-10" value="- channel_id: string&lt;br&gt;- video_id: string&lt;br&gt;- title: string&lt;br&gt;- views: int&lt;br&gt;- likes: int&lt;br&gt;- date: string&lt;br&gt;- thumbnail: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UEXLUlPenu7wnUoc71qz-9" vertex="1">
           <mxGeometry y="26" width="250" height="114" as="geometry" />
@@ -21,8 +21,8 @@
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-14" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0;entryY=0.065;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.997;exitY=0.894;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="UEXLUlPenu7wnUoc71qz-5" target="UEXLUlPenu7wnUoc71qz-9" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="791" y="780" as="sourcePoint" />
-            <mxPoint x="920" y="811" as="targetPoint" />
+            <mxPoint x="791" y="660" as="sourcePoint" />
+            <mxPoint x="920" y="691" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-15" value="&amp;nbsp; 1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="UEXLUlPenu7wnUoc71qz-14" connectable="0" vertex="1">
@@ -56,7 +56,7 @@
           <mxGeometry y="108" width="270" height="112" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-7" value="Repository&lt;br&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1070" y="110" width="270" height="150" as="geometry" />
+          <mxGeometry x="900" y="120" width="270" height="150" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-8" value="- channels: list(YoutubeVideo)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Ycr7JRSQ8kE74S5HEDjc-7" vertex="1">
           <mxGeometry y="26" width="270" height="26" as="geometry" />
@@ -68,26 +68,26 @@
           <mxGeometry y="60" width="270" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-11" value="ChannelsRepository" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="930" y="340" width="140" height="52" as="geometry" />
+          <mxGeometry x="760" y="350" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-15" value="EliminatedRepository" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1340" y="340" width="140" height="52" as="geometry" />
+          <mxGeometry x="1170" y="350" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-25" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.997;exitY=0.113;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ycr7JRSQ8kE74S5HEDjc-7" target="Ycr7JRSQ8kE74S5HEDjc-15" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="1340" y="149.58000000000004" as="sourcePoint" />
-            <mxPoint x="1500" y="149.58000000000004" as="targetPoint" />
+            <mxPoint x="1170" y="159.58000000000004" as="sourcePoint" />
+            <mxPoint x="1330" y="159.58000000000004" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1410" y="127" />
+              <mxPoint x="1240" y="137" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-16" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.102;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ycr7JRSQ8kE74S5HEDjc-7" target="Ycr7JRSQ8kE74S5HEDjc-11" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="1070" y="140" as="sourcePoint" />
-            <mxPoint x="1230" y="140" as="targetPoint" />
+            <mxPoint x="900" y="150" as="sourcePoint" />
+            <mxPoint x="1060" y="150" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1000" y="125" />
+              <mxPoint x="830" y="135" />
             </Array>
           </mxGeometry>
         </mxCell>
