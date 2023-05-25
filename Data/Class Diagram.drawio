@@ -1,17 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2023-05-25T20:20:33.799Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="NHvd4CION8Ov93WX8eJ9" version="21.3.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-25T20:22:58.089Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="Ayr6Tpiewy3uzex44brp" version="21.3.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1793" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="UEXLUlPenu7wnUoc71qz-4" value="YoutubeChannel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="510" y="410" width="210" height="300" as="geometry" />
+          <mxGeometry x="510" y="340" width="210" height="300" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-5" value="- channel_id: string&lt;br&gt;- title: string&lt;br&gt;- thumbnail: string&lt;br&gt;- subscriber_count: int&lt;br&gt;- last_published_video: string&lt;br&gt;- average_views: float&lt;br&gt;- average_likes: float&lt;br&gt;- average_comments: float&lt;br&gt;- relevance: float&lt;br&gt;- posting_frequency: string&lt;br&gt;- country: string&lt;br&gt;- instagram: string&lt;br&gt;- email: string&lt;br&gt;- topics: string&lt;br&gt;- scrape_date: string&lt;br&gt;- scrape_keyword: string&lt;br&gt;- videos: list(YoutubeVideo)&lt;br&gt;- custom_url: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UEXLUlPenu7wnUoc71qz-4" vertex="1">
           <mxGeometry y="26" width="210" height="274" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-9" value="YoutubeVideo&lt;br&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="930" y="530" width="250" height="140" as="geometry" />
+          <mxGeometry x="840" y="430" width="250" height="140" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-10" value="- channel_id: string&lt;br&gt;- video_id: string&lt;br&gt;- title: string&lt;br&gt;- views: int&lt;br&gt;- likes: int&lt;br&gt;- date: string&lt;br&gt;- thumbnail: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UEXLUlPenu7wnUoc71qz-9" vertex="1">
           <mxGeometry y="26" width="250" height="114" as="geometry" />
@@ -32,7 +32,7 @@
           <mxGeometry x="1" relative="1" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-18" value="YouTubeAPI" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="150" y="402" width="280" height="350" as="geometry" />
+          <mxGeometry x="155" y="310" width="280" height="350" as="geometry" />
         </mxCell>
         <mxCell id="UEXLUlPenu7wnUoc71qz-19" value="- youtube_api_service:&amp;nbsp;googleapiclient.discovery" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="UEXLUlPenu7wnUoc71qz-18" vertex="1">
           <mxGeometry y="26" width="280" height="26" as="geometry" />
@@ -68,27 +68,23 @@
           <mxGeometry y="60" width="270" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-11" value="ChannelsRepository" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="760" y="350" width="140" height="52" as="geometry" />
+          <mxGeometry x="850" y="320" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-15" value="EliminatedRepository" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1170" y="350" width="140" height="52" as="geometry" />
+          <mxGeometry x="1090" y="320" width="140" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="Ycr7JRSQ8kE74S5HEDjc-25" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.997;exitY=0.113;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ycr7JRSQ8kE74S5HEDjc-7" target="Ycr7JRSQ8kE74S5HEDjc-15" edge="1">
+        <mxCell id="Ycr7JRSQ8kE74S5HEDjc-25" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.963;exitY=1.007;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ycr7JRSQ8kE74S5HEDjc-10" target="Ycr7JRSQ8kE74S5HEDjc-15" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="1170" y="159.58000000000004" as="sourcePoint" />
             <mxPoint x="1330" y="159.58000000000004" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1240" y="137" />
-            </Array>
+            <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ycr7JRSQ8kE74S5HEDjc-16" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.102;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ycr7JRSQ8kE74S5HEDjc-7" target="Ycr7JRSQ8kE74S5HEDjc-11" edge="1">
+        <mxCell id="Ycr7JRSQ8kE74S5HEDjc-16" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.074;exitY=1.036;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ycr7JRSQ8kE74S5HEDjc-10" target="Ycr7JRSQ8kE74S5HEDjc-11" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="900" y="150" as="sourcePoint" />
             <mxPoint x="1060" y="150" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="830" y="135" />
-            </Array>
+            <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Ycr7JRSQ8kE74S5HEDjc-26" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.821;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="Ycr7JRSQ8kE74S5HEDjc-7" edge="1">
